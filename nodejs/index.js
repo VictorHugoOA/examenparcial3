@@ -9,5 +9,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.get('/state/:estado', estadoRuta);
+app.get('/cities/:cve', estadoRuta);
 
 app.listen(process.env.PORT || 3000);

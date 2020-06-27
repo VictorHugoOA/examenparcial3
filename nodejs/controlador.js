@@ -10,6 +10,13 @@ const ctrlDatos =
 
     findCity: async (req, res) =>
     {
+        const data = await dataModel.getCity(req.params.cve);
+        var arr = [];
+        for(var i = 0; i < data.data.numReg; i++)
+        {
+            arr.push({clave_e: data.data.datos[i].cve_agee, clave: data.data.datos[i].cve_agem, nombre: data.data.datos[i].nom_agem, poblacion: data.data.datos[i].pob, femenina: data.data.datos[i].pob_fem, masculina: data.data.datos[i].pob_mas, viviendas: data.data.datos[i].viv});
+        }
+        res.json(arr);
     }
 
 };
