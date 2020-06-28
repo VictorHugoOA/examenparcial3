@@ -1,16 +1,20 @@
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
-    <input #buscar class="form-control mr-sm-2" type="text" (keyup.enter)="Buscar(buscar.value)" placeholder="Buscar estado">
+  <input #buscar id="b" class="form-control mr-sm-2" type="text" (keyup.enter)="Buscar(buscar.value)" placeholder="Buscar estado">
     <button type="button" (click)="Buscar(buscar.value)" class="btn btn-outline-success">Buscar</button>
   </form>
 </nav>
 <div class="container">
- 
+  <div *ngIf="this.bandera">
+    <img id="img" class="img-fluid"src="../../../assets/img/mapa.jpeg" alt="">
+  </div>
   <div id="info" *ngIf="!this.bandera">
-    <h1><strong>Estado:</strong> {{estado.nombre}}</h1>
-
-
+   
+  <div class="row-2"> 
+  <h1><strong>Estado:</strong> {{estado.nombre}}</h1> 
+  <button type="button" (click)="Volver()" class="btn btn-outline-danger">Volver</button></div>
     <div class="row">
+     
       <div class="col md-4 text-left">
         <h2>Datos</h2>
 

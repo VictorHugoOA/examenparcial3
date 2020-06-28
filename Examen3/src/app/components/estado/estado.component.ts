@@ -88,6 +88,10 @@ export class EstadoComponent implements OnInit {
       });
     });
   }
+  Volver(){
+    this.bandera=true;
+    (<HTMLInputElement>document.getElementById("b")).value="";
+  }
 
   ngOnInit(): void {}
 }
