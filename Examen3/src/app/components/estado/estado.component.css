@@ -1,3 +1,27 @@
 p{
     font-size: 23px;
 }
+.grafica{
+    position: relative; 
+    height:50vh; 
+    width:40vw;
+    border-radius: 20px;
+    text-align: center;
+}
+
+td, th{
+    padding: 5px;
+    text-align: justify;
+    align-content: flex-start;
+}
+
+.container{
+    padding: 10px;
+
+}
+
+
+#info{
+    padding: 20px;
+   
+}

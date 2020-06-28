@@ -1,41 +1,74 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input #buscar class="form-control mr-sm-2" type="text" (keyup.enter)="Buscar(buscar.value)" placeholder="Buscar estado">
+    <button type="button" (click)="Buscar(buscar.value)" class="btn btn-outline-success">Buscar</button>
+  </form>
+</nav>
 <div class="container">
-
-  <h1><strong>Estado:</strong></h1>
-  <hr>
-
-  <div class="row">
-    <div class="col md-4 text-left">
-      <h2>Datos</h2>
-
-      <h3>
-        Clave
-      </h3>
-      <br>
-      <p>
-        {{estado.clave}}
-      </p>
-      <h3>
-        Población
-      </h3>
-      <br>
-      <p>
-        {{estado.poblacion}}
-      </p>
-      <h3>
-        Vivienda
-      </h3>
-      <br>
-      <p>
-        {{estado.vivienda}}
-      </p>
+ 
+  <div id="info" *ngIf="!this.bandera">
+    <h1><strong>Estado:</strong> {{estado.nombre}}</h1>
 
 
+    <div class="row">
+      <div class="col md-4 text-left">
+        <h2>Datos</h2>
+
+        <h3>
+          Clave
+        </h3>
+        <br>
+        <p>
+          {{estado.clave}}
+        </p>
+        <h3>
+          Población
+        </h3>
+        <br>
+        <p>
+          {{estado.poblacion}}
+        </p>
+        <h3>
+          Vivienda
+        </h3>
+        <br>
+        <p>
+          {{estado.vivienda}}
+        </p>
+
+
+      </div>
+      <div class="col md-4 text-center">
+        <div class="col mt-4 text-center chart-container" class="grafica">
+          <canvas id="my chart"></canvas>
+        </div>
+      </div>
     </div>
-    <div class="col md-4 text-center">
-      <app-grafica></app-grafica>
+    <div class="col">
+      <h1><strong>Municipios:</strong></h1>
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Clave</th>
+            <th>Municipio</th>
+            <th>Población</th>
+            <th>Viviendas</th>
+            <th>Población Femenina</th>
+            <th>Población Masculina</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let municipio of Municipios">
+
+          <td>{{municipio.claveMun}}</td>
+          <td>{{municipio.nombre}}</td>
+          <td>{{municipio.poblacion}}</td>
+          <td>{{municipio.vivienda}}</td>
+          <td>{{municipio.femenina}}</td>
+          <td>{{municipio.masculina}}</td>
+
+
+      </table>
     </div>
   </div>
-  <div class="row">
-    <h1><strong>Municipios:</strong></h1>
-  </div>
+
 </div>
