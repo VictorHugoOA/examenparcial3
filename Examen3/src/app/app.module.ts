@@ -7,18 +7,23 @@ import { GraficaComponent } from './components/grafica/grafica.component';
 import { NavComponent } from './components/nav/nav.component';
 import { EstadoComponent } from './components/estado/estado.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './components/services/data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     GraficaComponent,
     NavComponent,
     EstadoComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

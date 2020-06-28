@@ -1,0 +1,7 @@
+.grafica{
+    position: relative; 
+    height:50vh; 
+    width:40vw;
+    border-radius: 20px;
+    text-align: center;
+}
